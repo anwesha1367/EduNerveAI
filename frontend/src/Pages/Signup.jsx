@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
 import Button from '../components/common/Button'
-import '../styles/auth.scss'
+import './Login.css'
+import './Signup.css'
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -37,12 +38,13 @@ function Signup() {
     }))
   }
 
-  const interestOptions = ['Programming', 'Data Science', 'Web Development', 'Mobile Dev', 'AI/ML', 'Cloud']
+  const interestOptions = ['Programming', 'Data Science', 'Web Development', 'AI/ML', 'Cloud']
 
   return (
     <div className="auth-container">
-      <div className="auth-card signup-card">
+      <div className="auth-card">
         <div className="auth-header">
+          <div className="logo">🧠</div>
           <h1>Join EduNerve AI</h1>
           <p>Start your learning journey</p>
         </div>

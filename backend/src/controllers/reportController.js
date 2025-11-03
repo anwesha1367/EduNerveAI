@@ -1,17 +1,24 @@
-export const generateReport = (req, res) => {
-  const { interviewId } = req.body
+import pythonBridge from '../utils/pythonBridge.js'
 
-  const report = {
-    id: Date.now().toString(),
-    interviewId,
-    generatedAt: new Date(),
-    // Report data here
+export const generateReport = async (req, res) => {
+  try {
+    const reportData = req.body
+
+    // Generate report using Python service
+    const result = await pythonBridge.generateReport(reportData)
+
+    res.json({
+      success: true,
+      filename: result.filename,
+      downloadUrl: `http://localhost:5001${result.download_url}`
+    })
+  } catch (error) {
+    console.error('Error generating report:', error)
+    res.status(500).json({
+      success: false,
+      error: 'Failed to generate report'
+    })
   }
-
-  res.json({
-    success: true,
-    report
-  })
 }
 
 export const getReport = (req, res) => {
@@ -21,7 +28,8 @@ export const getReport = (req, res) => {
     success: true,
     report: {
       id: reportId,
-      // Report data
+      overallScore: 82,
+      summary: 'Great performance overall!'
     }
   })
 }

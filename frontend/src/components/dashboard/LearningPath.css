@@ -1,0 +1,53 @@
+.learning-path-widget {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.learning-path-widget h2 {
+  margin-bottom: 1.5rem;
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.recommendation-item {
+  padding: 1.25rem;
+  background: #F8F8F8;
+  border-radius: 12px;
+}
+
+.recommendation-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+.progress-bar {
+  height: 10px;
+  background: #E0E0E0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  font-size: 0.85rem;
+  color: #666666;
+  font-weight: 600;
+}

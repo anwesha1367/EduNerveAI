@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
 import Button from './Button'
-import './Navbar.scss'
+import './Navbar.css'
 
 function Navbar() {
   const { user, logout } = useAuth()
@@ -14,7 +14,6 @@ function Navbar() {
   }
 
   const isAuthPage = location.pathname === '/login' || location.pathname === '/signup'
-
   if (isAuthPage) return null
 
   return (

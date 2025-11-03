@@ -5,7 +5,7 @@ export const login = (req, res) => {
   if (email && password) {
     const user = {
       id: '1',
-      name: email.split('@')[0],
+      name: email.split('@'),
       email,
       interviews: 3,
       skills: 12
@@ -14,7 +14,7 @@ export const login = (req, res) => {
     res.json({
       success: true,
       user,
-      token: 'mock-jwt-token'
+      token: 'mock-jwt-token-' + Date.now()
     })
   } else {
     res.status(401).json({
@@ -41,6 +41,6 @@ export const signup = (req, res) => {
   res.json({
     success: true,
     user,
-    token: 'mock-jwt-token'
+    token: 'mock-jwt-token-' + Date.now()
   })
 }

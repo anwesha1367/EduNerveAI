@@ -1,8 +1,7 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Sphere } from '@react-three/drei'
-import * as THREE from 'three'
-import './InterviewAvatar.scss'
+import './InterviewAvatar.css'
 
 function AnimatedHead({ speaking }) {
   const meshRef = useRef()
@@ -20,19 +19,19 @@ function AnimatedHead({ speaking }) {
 
   return (
     <group ref={meshRef}>
+      {/* Head */}
       <Sphere args={[1, 32, 32]} position={[0, 0, 0]}>
-        <meshStandardMaterial 
-          color="#FFD93D" 
-          roughness={0.3} 
-          metalness={0.5}
-        />
+        <meshStandardMaterial color="#FFC107" roughness={0.3} metalness={0.5} />
       </Sphere>
+      {/* Left Eye */}
       <Sphere args={[0.15, 16, 16]} position={[-0.3, 0.2, 0.8]}>
         <meshStandardMaterial color="#000000" />
       </Sphere>
+      {/* Right Eye */}
       <Sphere args={[0.15, 16, 16]} position={[0.3, 0.2, 0.8]}>
         <meshStandardMaterial color="#000000" />
       </Sphere>
+      {/* Mouth */}
       <Sphere args={[0.3, 16, 16]} position={[0, -0.3, 0.8]}>
         <meshStandardMaterial color="#333333" />
       </Sphere>
@@ -46,7 +45,7 @@ function InterviewAvatar({ speaking = false }) {
       <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.3} penumbra={1} />
-        <pointLight position={[-10, -10, -10]} color="#FFD93D" intensity={0.5} />
+        <pointLight position={[-10, -10, -10]} color="#FFC107" intensity={0.5} />
         <AnimatedHead speaking={speaking} />
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>

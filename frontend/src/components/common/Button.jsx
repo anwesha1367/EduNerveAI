@@ -1,4 +1,4 @@
-import './Button.scss'
+import './Button.css'
 
 function Button({ 
   children, 
@@ -9,9 +9,16 @@ function Button({
   type = 'button',
   disabled = false 
 }) {
+  const classes = [
+    'btn',
+    `btn-${variant}`,
+    size === 'small' ? 'btn-small' : '',
+    fullWidth ? 'btn-full' : ''
+  ].filter(Boolean).join(' ')
+
   return (
     <button
-      className={`btn btn--${variant} btn--${size} ${fullWidth ? 'btn--full' : ''}`}
+      className={classes}
       onClick={onClick}
       type={type}
       disabled={disabled}

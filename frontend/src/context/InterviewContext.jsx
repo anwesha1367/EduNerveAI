@@ -11,11 +11,12 @@ export function InterviewProvider({ children }) {
     proctoring: {
       faceDetected: true,
       tabChanges: 0,
-      copyPasteAttempts: 0
+      copyPasteAttempts: 0,
+      noFaceCount: 0,
+      multipleFaceCount: 0,
+      lookingAwayCount: 0
     }
   })
-
-  const [reportData, setReportData] = useState(null)
 
   const startInterview = () => {
     setInterviewState(prev => ({
@@ -59,8 +60,6 @@ export function InterviewProvider({ children }) {
     <InterviewContext.Provider 
       value={{ 
         interviewState, 
-        reportData,
-        setReportData,
         startInterview, 
         submitAnswer, 
         endInterview,

@@ -5,19 +5,17 @@ export function useProctoring() {
   const { updateProctoring } = useInterview()
 
   useEffect(() => {
-    // Tab change detection
     const handleVisibilityChange = () => {
       if (document.hidden) {
         updateProctoring({ tabChanges: (prev) => prev + 1 })
       }
     }
 
-    // Copy-paste detection
-    const handleCopy = (e) => {
+    const handleCopy = () => {
       updateProctoring({ copyPasteAttempts: (prev) => prev + 1 })
     }
 
-    const handlePaste = (e) => {
+    const handlePaste = () => {
       updateProctoring({ copyPasteAttempts: (prev) => prev + 1 })
     }
 

@@ -1,0 +1,66 @@
+.answer-input {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.answer-input textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #DDDDDD;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 150px;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  color: #000000;
+}
+
+.answer-input textarea:focus {
+  outline: none;
+  border-color: #FFC107;
+}
+
+.answer-input textarea::placeholder {
+  color: #AAAAAA;
+}
+
+.input-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.voice-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #DDDDDD;
+  border-radius: 8px;
+  background: #FFFFFF;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333333;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.voice-btn:hover {
+  border-color: #FFC107;
+  background: #FFF9E6;
+}
+
+.voice-btn.recording {
+  border-color: #FF4444;
+  background: #FFF0F0;
+  color: #CC0000;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}

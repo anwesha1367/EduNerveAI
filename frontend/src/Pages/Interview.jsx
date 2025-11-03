@@ -3,18 +3,17 @@ import { useNavigate } from 'react-router-dom'
 import gsap from 'gsap'
 import { useInterview } from '../hooks/useInterview'
 import { useProctoring } from '../hooks/useProctoring'
-import { getQuestions, submitInterview } from '../services/api'
-import InterviewAvatar from '../components/interview/InterviewAvatar'
-import QuestionCard from '../components/interview/QuestionCard'
-import AnswerInput from '../components/interview/AnswerInput'
-import ProctorMonitor from '../components/interview/ProctorMonitor'
-import Button from '../components/common/Button'
-import '../styles/interview.scss'
+import { getQuestions } from '../services/api'
+import InterviewAvatar from '../components/Interview/InterviewAvatar'
+import QuestionCard from '../components/Interview/QuestionCard'
+import AnswerInput from '../components/Interview/AnswerInput'
+import CameraProctoring from '../components/Interview/CameraProctoring'
+import './Interview.css'
 
 function Interview() {
   const [questions, setQuestions] = useState([])
   const [loading, setLoading] = useState(true)
-  const { interviewState, startInterview, submitAnswer, endInterview, setReportData } = useInterview()
+  const { interviewState, startInterview, submitAnswer, endInterview } = useInterview()
   useProctoring()
   const navigate = useNavigate()
   const questionRef = useRef()
@@ -52,22 +51,13 @@ function Interview() {
     }
   }
 
-  const handleInterviewEnd = async () => {
+  const handleInterviewEnd = () => {
     endInterview()
-    
-    try {
-      const response = await submitInterview({
-        answers: interviewState.answers,
-        proctoring: interviewState.proctoring,
-        startTime: interviewState.startTime,
-        endTime: new Date()
-      })
-      
-      setReportData(response.data.report)
-      navigate('/report')
-    } catch (error) {
-      console.error('Failed to submit interview:', error)
-    }
+    navigate('/report')
+  }
+
+  const handleProctoringEvent = (eventType) => {
+    console.log('Proctoring event:', eventType)
   }
 
   if (loading) {
@@ -91,17 +81,14 @@ function Interview() {
       <div className="interview-content">
         <div className="interview-left">
           <InterviewAvatar speaking={true} />
-          <ProctorMonitor proctoring={interviewState.proctoring} />
+          <CameraProctoring onProctoringEvent={handleProctoringEvent} />
         </div>
 
         <div className="interview-right" ref={questionRef}>
           {currentQuestion && (
             <>
               <QuestionCard question={currentQuestion} />
-              <AnswerInput 
-                onSubmit={handleAnswerSubmit}
-                placeholder="Type your answer here..."
-              />
+              <AnswerInput onSubmit={handleAnswerSubmit} />
             </>
           )}
         </div>

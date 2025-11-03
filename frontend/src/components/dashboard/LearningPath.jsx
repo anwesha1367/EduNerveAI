@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import Button from '../common/Button'
-import './LearningPath.scss'
+import './LearningPath.css'
 
-function LearningPath({ userId }) {
+function LearningPath() {
   const navigate = useNavigate()
 
   const recommendations = [
@@ -19,20 +19,13 @@ function LearningPath({ userId }) {
           <div key={index} className="recommendation-item">
             <h3>{rec.title}</h3>
             <div className="progress-bar">
-              <div 
-                className="progress-fill" 
-                style={{ width: `${rec.progress}%` }}
-              />
+              <div className="progress-fill" style={{ width: `${rec.progress}%` }} />
             </div>
             <span className="progress-text">{rec.progress}% Complete</span>
           </div>
         ))}
       </div>
-      <Button 
-        variant="primary" 
-        fullWidth
-        onClick={() => navigate('/learning-path')}
-      >
+      <Button variant="primary" fullWidth onClick={() => navigate('/learning-path')}>
         View Full Learning Path
       </Button>
     </div>

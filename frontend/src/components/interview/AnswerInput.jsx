@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import Button from '../common/Button'
-import './AnswerInput.scss'
+import './AnswerInput.css'
 
-function AnswerInput({ onSubmit, placeholder }) {
+function AnswerInput({ onSubmit }) {
   const [answer, setAnswer] = useState('')
   const [isRecording, setIsRecording] = useState(false)
 
@@ -15,7 +15,6 @@ function AnswerInput({ onSubmit, placeholder }) {
 
   const handleVoiceInput = () => {
     setIsRecording(!isRecording)
-    // Mock voice input - in real implementation, use Web Speech API
     if (!isRecording) {
       setTimeout(() => {
         setAnswer(prev => prev + ' [Voice input simulated]')
@@ -29,7 +28,7 @@ function AnswerInput({ onSubmit, placeholder }) {
       <textarea
         value={answer}
         onChange={(e) => setAnswer(e.target.value)}
-        placeholder={placeholder}
+        placeholder="Type your answer here..."
         rows={6}
       />
       <div className="input-actions">

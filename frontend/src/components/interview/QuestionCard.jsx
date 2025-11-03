@@ -1,4 +1,4 @@
-import './QuestionCard.scss'
+import './QuestionCard.css'
 
 function QuestionCard({ question }) {
   return (

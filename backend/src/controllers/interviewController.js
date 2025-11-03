@@ -35,28 +35,7 @@ export const submitInterview = (req, res) => {
       { name: 'Communication', score: 88 },
       { name: 'Code Quality', score: 80 }
     ],
-    psychometrics: [
-      {
-        trait: 'Analytical Thinking',
-        score: 82,
-        description: 'You show strong ability to break down complex problems'
-      },
-      {
-        trait: 'Creativity',
-        score: 75,
-        description: 'Good at finding alternative solutions'
-      },
-      {
-        trait: 'Stress Management',
-        score: 68,
-        description: 'Room to improve performance under pressure'
-      },
-      {
-        trait: 'Attention to Detail',
-        score: 79,
-        description: 'Generally thorough in your approach'
-      }
-    ]
+    timestamp: new Date()
   }
 
   res.json({

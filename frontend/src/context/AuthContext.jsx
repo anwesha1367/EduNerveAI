@@ -8,7 +8,6 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Check for stored user session
     const storedUser = sessionStorage.getItem('edunerve_user')
     if (storedUser) {
       setUser(JSON.parse(storedUser))

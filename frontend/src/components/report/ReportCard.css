@@ -1,0 +1,20 @@
+.report-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #E0E0E0;
+}
+
+.report-card-title {
+  margin-bottom: 1.5rem;
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #FFC107;
+}
+
+.report-card-content {
+  color: #333333;
+}

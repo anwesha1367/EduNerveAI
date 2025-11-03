@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
 import Button from '../components/common/Button'
-import '../styles/auth.scss'
+import './Login.css'
 
 function Login() {
   const [credentials, setCredentials] = useState({ email: '', password: '' })
@@ -26,6 +26,7 @@ function Login() {
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-header">
+          <div className="logo">🧠</div>
           <h1>Welcome Back</h1>
           <p>Login to EduNerve AI</p>
         </div>

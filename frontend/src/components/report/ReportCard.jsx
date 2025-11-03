@@ -1,4 +1,4 @@
-import './ReportCard.scss'
+import './ReportCard.css'
 
 function ReportCard({ title, children }) {
   return (

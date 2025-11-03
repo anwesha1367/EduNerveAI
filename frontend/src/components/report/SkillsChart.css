@@ -1,0 +1,46 @@
+.skills-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.skill-name {
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+.skill-score {
+  font-size: 1.1rem;
+  color: #FFA000;
+  font-weight: 700;
+}
+
+.skill-bar {
+  height: 14px;
+  background: #E0E0E0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  box-shadow: 0 2px 6px rgba(255, 193, 7, 0.3);
+}

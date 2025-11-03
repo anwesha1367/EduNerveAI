@@ -1,0 +1,82 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  height: 70px;
+  border-bottom: 3px solid #FFC107;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  font-size: 2rem;
+}
+
+.brand-name {
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.navbar-menu a {
+  color: #333333;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.navbar-menu a:hover {
+  color: #000000;
+}
+
+.navbar-menu a.active {
+  color: #000000;
+}
+
+.navbar-menu a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -27px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #FFC107;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-name {
+  color: #000000;
+  font-weight: 600;
+  font-size: 1rem;
+}

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import './SkillsChart.scss'
+import './SkillsChart.css'
 
 function SkillsChart({ data }) {
   const chartRef = useRef()

@@ -1,0 +1,28 @@
+.interest-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.chip {
+  padding: 0.5rem 1rem;
+  border: 2px solid #DDDDDD;
+  border-radius: 20px;
+  background: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333333;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: #FFC107;
+  background: #FFF9E6;
+}
+
+.chip.active {
+  background: #FFC107;
+  border-color: #FF8F00;
+  color: #000000;
+}

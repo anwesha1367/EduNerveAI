@@ -4,11 +4,12 @@ import { InterviewProvider } from './context/InterviewContext'
 import Navbar from './components/common/Navbar'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
-import Dashboard from './pages/Dashboard'
+import Dashboard from './Pages/Dashboard'
 import Interview from './pages/Interview'
 import Report from './pages/Report'
 import LearningPath from './pages/LearningPath'
 import { useAuth } from './hooks/useAuth'
+import './App.css'
 
 function ProtectedRoute({ children }) {
   const { user } = useAuth()
@@ -50,7 +51,7 @@ function App() {
                 } 
               />
               <Route 
-                path="/learning-path" 
+                path="/learning-path-page" 
                 element={
                   <ProtectedRoute>
                     <LearningPath />

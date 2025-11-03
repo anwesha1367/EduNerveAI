@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import StatsCard from '../components/dashboard/StatsCard'
 import LearningPath from '../components/dashboard/LearningPath'
 import Button from '../components/common/Button'
-import '../styles/dashboard.scss'
+import './Dashboard.css'
 
 function Dashboard() {
   const { user } = useAuth()
@@ -13,21 +13,22 @@ function Dashboard() {
   const dashboardRef = useRef()
 
   useEffect(() => {
-    // Animate dashboard entry
-    gsap.from(dashboardRef.current.children, {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: 'power3.out'
-    })
+    if (dashboardRef.current) {
+      gsap.from(dashboardRef.current.children, {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out'
+      })
+    }
   }, [])
 
   const stats = [
-    { label: 'Interviews Completed', value: user?.interviews || 3, color: '#FFD93D' },
-    { label: 'Average Score', value: '78%', color: '#FFC93D' },
-    { label: 'Skills Assessed', value: user?.skills || 12, color: '#FFB93D' },
-    { label: 'Learning Hours', value: '24h', color: '#FFA93D' }
+    { label: 'Interviews Completed', value: 3, color: '#FFC107' },
+    { label: 'Average Score', value: '78%', color: '#FFB300' },
+    { label: 'Skills Assessed', value: 12, color: '#FFA000' },
+    { label: 'Learning Hours', value: '24h', color: '#FF8F00' }
   ]
 
   return (
@@ -37,10 +38,7 @@ function Dashboard() {
           <h1>Welcome back, {user?.name}!</h1>
           <p>Ready to practice your next interview?</p>
         </div>
-        <Button 
-          variant="primary" 
-          onClick={() => navigate('/interview')}
-        >
+        <Button variant="primary" onClick={() => navigate('/interview')}>
           Start New Interview
         </Button>
       </div>
@@ -61,11 +59,7 @@ function Dashboard() {
                 <h3>Technical Interview</h3>
                 <p>Completed 2 days ago • Score: 82%</p>
               </div>
-              <Button 
-                variant="secondary" 
-                size="small"
-                onClick={() => navigate('/report')}
-              >
+              <Button variant="secondary" size="small">
                 View Report
               </Button>
             </div>
