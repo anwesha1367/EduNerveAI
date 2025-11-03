@@ -1,0 +1,38 @@
+@import '../../styles/variables.scss';
+
+.skills-chart {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.skill-row {
+  .skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacing-xs;
+
+    .skill-name {
+      font-weight: 500;
+      color: $text-dark;
+    }
+
+    .skill-score {
+      font-weight: 600;
+      color: $yellow-dark;
+    }
+  }
+
+  .skill-bar {
+    height: 12px;
+    background: $bg-light;
+    border-radius: $radius-lg;
+    overflow: hidden;
+
+    .skill-bar-fill {
+      height: 100%;
+      background: $gradient-yellow;
+      border-radius: $radius-lg;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import '../../styles/variables.scss';
+
+.answer-input {
+  background: $bg-white;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-md;
+
+  textarea {
+    width: 100%;
+    padding: $spacing-md;
+    border: 2px solid $border-color;
+    border-radius: $radius-sm;
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 150px;
+    transition: border-color $transition-fast;
+
+    &:focus {
+      outline: none;
+      border-color: $yellow-base;
+    }
+  }
+
+  .input-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $spacing-md;
+
+    .voice-btn {
+      padding: $spacing-sm $spacing-lg;
+      border: 2px solid $border-color;
+      border-radius: $radius-sm;
+      background: $bg-white;
+      font-size: 0.95rem;
+      transition: all $transition-fast;
+
+      &:hover {
+        border-color: $yellow-base;
+        background: $yellow-light;
+      }
+
+      &.recording {
+        border-color: $error;
+        background: rgba($error, 0.1);
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+    }
+  }
+}

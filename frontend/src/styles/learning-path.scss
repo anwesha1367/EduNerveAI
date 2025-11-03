@@ -1,0 +1,141 @@
+@import './variables.scss';
+
+.learning-path-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-lg;
+}
+
+.path-header {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: $text-secondary;
+  }
+}
+
+.recommendation-banner {
+  background: $gradient-yellow;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+
+  .banner-icon {
+    font-size: 3rem;
+  }
+
+  .banner-content {
+    h2 {
+      margin-bottom: $spacing-sm;
+    }
+
+    strong {
+      color: $text-dark;
+    }
+  }
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+}
+
+.course-card {
+  background: $bg-white;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-md;
+  transition: transform $transition-normal, box-shadow $transition-normal;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+
+  &.selected {
+    border: 3px solid $yellow-base;
+  }
+
+  .course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: $spacing-md;
+
+    h3 {
+      font-size: 1.3rem;
+      flex: 1;
+    }
+
+    .relevance-badge {
+      padding: $spacing-xs $spacing-sm;
+      border-radius: $radius-sm;
+      font-size: 0.8rem;
+      font-weight: 600;
+
+      &.high {
+        background: rgba($success, 0.2);
+        color: darken($success, 10%);
+      }
+
+      &.medium {
+        background: rgba($warning, 0.2);
+        color: darken($warning, 10%);
+      }
+    }
+  }
+
+  .course-description {
+    color: $text-secondary;
+    margin-bottom: $spacing-md;
+  }
+
+  .course-meta {
+    display: flex;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+    color: $text-secondary;
+    font-size: 0.9rem;
+  }
+
+  .course-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    margin-bottom: $spacing-md;
+
+    .skill-tag {
+      padding: $spacing-xs $spacing-sm;
+      background: $yellow-light;
+      border-radius: $radius-sm;
+      font-size: 0.85rem;
+      color: $text-dark;
+    }
+  }
+
+  .course-relevance {
+    color: $text-secondary;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.path-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: $spacing-lg;
+}
